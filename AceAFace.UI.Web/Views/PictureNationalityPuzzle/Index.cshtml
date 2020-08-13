@@ -1,0 +1,27 @@
+﻿@using AceAFace.Common.EnumTypes
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    </style>
+</head>
+
+<body id="body" onload="GetImageUrls()">
+
+    <div class="col-md-12 " id="leftPart">
+        <div id="parent">
+            <p><img id=@Nationality.Chinese src="~/Images/Country/China.png" ondrop="drop(event)" ondragover="allowDrop(event)"></p>
+            <p><img id=@Nationality.Korean src="~/Images/Country/korea.png" ondrop="drop(event)" ondragover="allowDrop(event)"></p>
+            <p><img id=@Nationality.Japanese src="~/Images/Country/Japan.png" ondrop="drop(event)" ondragover="allowDrop(event)"></p>
+            <p><img id=@Nationality.Thai src="~/Images/Country/Thailand.png" ondrop="drop(event)" ondragover="allowDrop(event)"></p>
+            <p><input type="button" class="btn btn-primary btn-lg" Id="btnStart" onclick="AnimateImage()" value="Start" /></p>
+            <p id="score-text"></p>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/AceAFace.js"></script>
+
+
+</body>
+</html>

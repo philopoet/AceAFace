@@ -1,0 +1,104 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#myDIV{
+    width: 145px;
+    height: 145px;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {top: 0px;}
+    to {top: 600px;}
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 600px;}
+}
+.middle {
+    position: absolute;
+    top: 0;
+    left: 45%;
+
+}
+.picturesize {
+    
+    width: 100px;
+    height: 100px;
+}
+
+
+#parent {
+    position: relative;
+    border: 3px solid blue;
+    height: 500px;
+    width: 1000px;
+    padding: 0;
+}
+
+p {
+    position: absolute;
+    border: 2px solid;
+    margin: 0;
+    padding: 5px;
+}
+
+    p:nth-child(1) {
+        border-color: green;
+        top: 0;
+        left: 0;
+    }
+
+    p:nth-child(2) {
+        border-color: red;
+        top: 0;
+        right: 0;
+    }
+
+    p:nth-child(3) {
+        border-color: yellow;
+        bottom: 0;
+        left: 0;
+    }
+
+    p:nth-child(4) {
+        border-color: pink;
+        bottom: 0;
+        right: 0;
+    }
+    p:nth-child(5) {
+        top: 45%;
+        left: 45%;
+        border-style: none;
+    }
+p:nth-child(6) {
+    bottom: 40%;
+    left: 0;
+    font-size: 40px;
+}
+    p:nth-child(7) {
+        border-color: green;
+        bottom: 0;
+        left: 45%;
+    }

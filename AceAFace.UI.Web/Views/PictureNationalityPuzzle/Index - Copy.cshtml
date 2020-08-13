@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+
+    </style>
+</head>
+
+<body id="body" onload="LoadImage()">
+
+  
+    <div id="mainContainer" style="height: 6000px; background-color: rgba(255,0,0,0.1);" class="container-fluid leftdiv"  ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="row" id="row1" >
+            <div class="leftdiv col-md-3  " id="leftPart" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="row top-left" id="row2">
+                    <img id="myDIV1"  src="~/Images/Country/China.png">
+                </div>
+                <div  class="row middle d-block" id="row3">
+                    <div id="middleContainer" style="height: 151px; background-color: rgba(255, 0, 0, 0.1);" class="container-fluid leftdiv">
+                        </div>
+                    </div>
+                <div class="row bottom-left" id="row4">
+                    <img id="myDIV2"  src="~/Images/Country/Japan.png">
+                </div>
+                  
+
+
+
+                </div>
+        <div class="middlediv col-md-6  " id="middlePart" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="rightdiv col-md-3  " id="rightPart" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                <div class="row top-right" id="row21">
+                    <img id="myDIV3"  src="~/Images/Country/Thailand.png">
+                </div>
+                <div  class="row middle d-block" id="row3">
+                    <div id="middleContainer" style="height: 151px; background-color: rgba(255, 0, 0, 0.1);" class="container-fluid leftdiv">
+                    </div>
+                </div>
+                <div class="row bottom-right" id="row41">
+                    <img id="myDIV4"  src="~/Images/Country/Korea.png">
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    @*<div class="div1 col-md-3" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="div1 col-md-3" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="div1 col-md-3" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="div1 col-md-3" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">*@
+
+        <input type="button" onclick="myFunction()" value="Start" />
+
+
+
+    @*<div class="div1 left_center" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+
+
+// Start the animation with JavaScript
+function myFunction() {
+debugger;
+//$( "body" ).append( "<img id="myDIV"  class="middle" src="img3.jpg" draggable="true" ondragstart="drag(event)">" );
+//<body id="body" onload="LoadImage()">
+var x = document.getElementById("myDIV");
+  x.style.WebkitAnimation = "mymove 8s 1"; // Code for Chrome, Safari and Opera
+  x.style.animation = "mymove 8s 1";     // Standard syntax
+  x.addEventListener("webkitAnimationStart", myStartFunction);
+x.addEventListener("webkitAnimationIteration", myRepeatFunction);
+x.addEventListener("webkitAnimationEnd", myEndFunction);
+x.addEventListener("mouseover", PauseDropingPicture);
+x.addEventListener("mouseout", PlayDropingPicture);
+// Standard syntax
+x.addEventListener("animationstart", myStartFunction);
+x.addEventListener("animationiteration", myRepeatFunction);
+
+x.addEventListener("animationend", myEndFunction);
+}
+
+// Code for Chrome, Safari and Opera
+
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  if (ev.dataTransfer != null){
+   ev.dataTransfer.setData("text", ev.target.id);
+}
+
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+
+  debugger;
+  PauseDropingPicture();
+     $("#myDIV").delay(2000).fadeOut("slow");
+	 setTimeout(function(){
+	  var element = document. getElementById("myDIV");
+	 element. parentNode.removeChild(element)
+ LoadImage();
+	 myFunction();	 }, 3000);
+	;
+	 debugger;
+
+
+}
+
+
+function myStartFunction() {
+  this.innerHTML = "animationstart event occured - The animation has started";
+  this.style.backgroundColor = "pink";
+}
+
+function myRepeatFunction() {
+  this.innerHTML = "animationiteration event occured - The animation was played again";
+  this.style.backgroundColor = "lightblue";
+}
+
+function myEndFunction() {
+  this.innerHTML = "animationend event occured - The animation has completed";
+  this.style.backgroundColor = "lightgray";
+
+}
+function PauseDropingPicture() {
+  document.getElementById("myDIV").style.animationPlayState = "paused"
+}
+function PlayDropingPicture(element) {
+
+if(this.parentNode.id == "body")
+{
+
+ document.getElementById("myDIV").style.animationPlayState = "running"
+}
+
+}
+function LoadImage(){
+
+var img = document.createElement('img');
+img.id = "myDIV" ;
+img.className = "middle" ;
+img.src = "\images\img3.jpg";
+img.setAttribute("draggable", true);
+img.setAttribute("ondragstart", "drag(event)");
+ document.getElementById('body').appendChild(img);
+            }
+    function StartNewGame() {
+
+    }
+    </script>
+
+</body>
+</html>
