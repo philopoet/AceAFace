@@ -1,2 +1,2 @@
 # AceAFace
-a simplified DDD architechture
+a simplified DDD architecture
